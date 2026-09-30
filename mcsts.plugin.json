@@ -1,0 +1,18 @@
+{
+  "id": "smoke_ping",
+  "name": "Smoke：入口回显",
+  "version": "0.1.0",
+  "apiVersion": 1,
+  "main": "index.ts",
+  "author": "SunsetNightMoon",
+  "description": "一次性导入链路验证用：只挂一个公开 /ping，回显设置项与安装来源。作者写插件时可以照这个仓库的形态抄。",
+  "requires": [
+    { "id": "none", "label": "无外部依赖", "note": "只为验证面板会把声明的依赖摊出来" }
+  ],
+  "settings": [
+    { "key": "GREETING", "type": "string", "label": "问候语", "default": "hi", "hint": "/ping 会原样回显" }
+  ],
+  "endpoints": [
+    { "kind": "router", "method": "GET", "path": "/ping", "auth": "public", "note": "回显问候语与插件版本" }
+  ]
+}
